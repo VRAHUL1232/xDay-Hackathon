@@ -175,7 +175,7 @@ const handleSubmit = async (e) => {
             <button
               key={tab}
               className={`text-lg px-8 py-2 font-medium transition-all border-b-2 ${
-                activeTab === tab ? 'text-purple-600 border-purple-600' : 'text-gray-500 border-transparent hover:text-purple-600'
+                activeTab === tab ? 'text-sky-600 border-sky-600' : 'text-gray-500 border-transparent hover:text-sky-600'
               }`}
               onClick={() => {
                 dispatch(setActiveTab(tab));
@@ -203,7 +203,7 @@ const handleSubmit = async (e) => {
                   }
                 }}
               />
-              <div className="fallback-icon hidden absolute inset-0 items-center justify-center text-purple-600">
+              <div className="fallback-icon hidden absolute inset-0 items-center justify-center text-sky-600">
                 <FileSearch size={48} />
               </div>
             </div>
@@ -211,7 +211,7 @@ const handleSubmit = async (e) => {
             {activeTab === 'FILE' ? (
               <>
                 <input type="file" id="file-upload" className="hidden" onChange={handleFileChange} />
-                <label htmlFor="file-upload" className="inline-block px-6 py-3 bg-purple-600 text-white rounded-md cursor-pointer hover:bg-purple-700 transition-colors">
+                <label htmlFor="file-upload" className="inline-block px-6 py-3 bg-sky-600 text-white rounded-md cursor-pointer hover:bg-sky-700 transition-colors">
                   <FileSearch size={20} className="mr-2 inline-block" />
                   Choose file
                 </label>
@@ -230,7 +230,7 @@ const handleSubmit = async (e) => {
                 <button
                   type="button"
                   onClick={triggerFolderInput}
-                  className="inline-block px-6 py-3 bg-purple-600 text-white rounded-md cursor-pointer hover:bg-purple-700 transition-colors"
+                  className="inline-block px-6 py-3 bg-sky-600 text-white rounded-md cursor-pointer hover:bg-sky-700 transition-colors"
                 >
                   <FolderOpen size={20} className="mr-2 inline-block" />
                   Choose folder
@@ -242,15 +242,15 @@ const handleSubmit = async (e) => {
 
           <p className="text-sm text-gray-600 mb-4">
             By submitting data above, you are agreeing to our{' '}
-            <a href="#" className="text-purple-600 hover:underline">
+            <a href="#" className="text-sky-600 hover:underline">
               Terms of Service
             </a>{' '}
             and{' '}
-            <a href="#" className="text-purple-600 hover:underline">
+            <a href="#" className="text-sky-600 hover:underline">
               Privacy Notice
             </a>
             , and to the{' '}
-            <a href="#" className="text-purple-600 hover:underline">
+            <a href="#" className="text-sky-600 hover:underline">
               sharing of your Sample submission with the security community
             </a>
             .
@@ -261,7 +261,7 @@ const handleSubmit = async (e) => {
             disabled={activeTab === 'FILE' ? !selectedFile : !selectedFolder}
             className={`px-6 py-2 rounded-md transition-colors ${
               (activeTab === 'FILE' ? selectedFile : selectedFolder)
-                ? 'bg-purple-600 text-white hover:bg-purple-700'
+                ? 'bg-sky-600 text-white hover:bg-sky-700'
                 : 'bg-gray-300 text-gray-500 cursor-not-allowed'
             }`}
           >

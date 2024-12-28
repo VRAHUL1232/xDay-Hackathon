@@ -44,15 +44,15 @@ const Updates = () => {
   return (
     <div className="p-6">
       <div className="bg-white shadow-lg rounded-lg p-6">
-        <h1 className="text-3xl font-semibold text-purple-800 mb-6">Updates</h1>
+        <h1 className="text-3xl font-semibold text-sky-800 mb-6">Updates</h1>
 
         {/* Tabs */}
         <div className="flex mb-6 border-b">
           <button
             className={`px-4 py-2 font-medium transition-all border-b-2 ${
               activeTab === "available"
-                ? "text-purple-600 border-purple-600"
-                : "text-gray-500 border-transparent hover:text-purple-600"
+                ? "text-sky-600 border-sky-600"
+                : "text-gray-500 border-transparent hover:text-sky-600"
             }`}
             onClick={() => setActiveTab("available")}
           >
@@ -61,8 +61,8 @@ const Updates = () => {
           <button
             className={`px-4 py-2 font-medium transition-all border-b-2 ml-4 ${
               activeTab === "past"
-                ? "text-purple-600 border-purple-600"
-                : "text-gray-500 border-transparent hover:text-purple-600"
+                ? "text-sky-600 border-sky-600"
+                : "text-gray-500 border-transparent hover:text-sky-600"
             }`}
             onClick={() => setActiveTab("past")}
           >
@@ -170,7 +170,7 @@ const Updates = () => {
             onClick={() => {
               console.log("Check for updates");
             }}
-            className="mt-6 px-6 py-2 bg-purple-600 text-white font-medium rounded-lg shadow hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 text-sm transition duration-150 ease-in-out flex items-center"
+            className="mt-6 px-6 py-2 bg-sky-600 text-white font-medium rounded-lg shadow hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 text-sm transition duration-150 ease-in-out flex items-center"
           >
             <BiRefresh className="w-5 h-5 mr-2" />
             Check for Updates

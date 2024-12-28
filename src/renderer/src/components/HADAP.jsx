@@ -205,20 +205,20 @@ const HADAP = ({ onBack }) => {
         >
           <button
             onClick={onBack}
-            className="ml-auto flex items-center space-x-2 bg-purple-700 text-white px-3 py-2 rounded-md hover:bg-purple-800 shadow-md"
+            className="ml-auto flex items-center space-x-2 bg-sky-500 text-white px-3 py-2 rounded-md hover:bg-sky-600 shadow-md"
           >
             <span className="text-lg font-bold">&larr;</span>
             <span>Back</span>
           </button>
         </div>
 
-        <h1 className="text-purple-800 text-3xl font-semibold">HADAP Client Backup</h1>
+        <h1 className="text-sky-800 text-3xl font-semibold">HADAP Client Backup</h1>
         <p className="text-gray-500 text-medium font-semibold mt-2">
           Manage snapshots (backups) for the HADAP VM below.
         </p>
 
         <p className="text-medium font-semibold mt-4 flex items-center">
-          <span className={'mr-2 text-purple-800 font-semibold'}>VM State:</span>
+          <span className={'mr-2 text-sky-600 font-semibold'}>VM State:</span>
           <span className={`flex items-center ${textColor}`}>
             {vmState || "Loading..."}
             <span className={`ml-2 h-3 w-3 rounded-full animate-pulse ${indicatorColor}`}></span>
@@ -261,7 +261,7 @@ const HADAP = ({ onBack }) => {
                       selectedRow === index ? 'bg-blue-200' : 'hover:bg-blue-100'
                     }`}
                   >
-                    <td className="text-purple-700 text-lg font-bold px-5 py-3">{snapshot.vm_name}</td>
+                    <td className="text-sky-500 text-lg font-bold px-5 py-3">{snapshot.vm_name}</td>
                     <td className="px-4 py-3">{snapshot.snapshot_name}</td>
                     <td className="px-4 py-3">{snapshot.snapshot_description}</td>
                     <td className="px-4 py-3 flex items-center justify-center">
