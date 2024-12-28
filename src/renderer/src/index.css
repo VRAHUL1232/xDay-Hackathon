@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+class rahul{
+    font-size: large;
+}
+
+/*
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/VRAHUL1232/0xDay-Hackathon.git
+git push -u origin main
+*/
