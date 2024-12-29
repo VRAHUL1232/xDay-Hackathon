@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import logo from '../assets/hadap_logo.png'
+import logo from '../assets/malware_slayer.jpg'
 import avatar from '../assets/avatar.jpg'
 import { MdDashboard } from 'react-icons/md' // Dashboard overview icon
 import { MdScanner } from 'react-icons/md' // Dashboard icon
@@ -52,7 +52,7 @@ const Sidebar = () => {
     <div className="w-62 h-full bg-white fixed px-4 py-2 flex flex-col justify-between flex flex-col justify-between">
       <div>
         <div className="my-2 mb-4">
-          <img src={logo} alt="Admin Dashboard Logo" className="inline-block w-24 h-15 mr-2 -mt-1" />
+          <img src={logo} alt="Admin Dashboard Logo" className="inline-block w-24 h-15 mr-2 -mt-1 justify-center" />
         </div>
         <hr className="text-black font-bold" />
         <ul className="mt-1 flex flex-col justify-between text-black">

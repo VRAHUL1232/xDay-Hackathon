@@ -205,6 +205,7 @@ const handleSubmit = async (e) => {
               />
               <div className="fallback-icon hidden absolute inset-0 items-center justify-center text-sky-600">
                 <FileSearch size={48} />
+                
               </div>
             </div>
 

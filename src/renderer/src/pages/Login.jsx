@@ -5,6 +5,7 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const LoginPage = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -23,6 +24,13 @@ const LoginPage = () => {
       localStorage.setItem('users', JSON.stringify({}));
     }
   }, []);
+  
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      navigate('/dashboard');
+    }
+  }, [navigate]);
 
   const toggleForm = () => {
     setError('');
@@ -42,23 +50,32 @@ const LoginPage = () => {
       const signInResponseTrigger = await fetch('http://localhost:5002/api/auth/login', {
         method: 'POST',
         body: formData,
+        headers: {
+          // Remove Content-Type header when using FormData
+          'Accept': 'application/json',
+        },
       });
       
+      if (!signInResponseTrigger.ok) {
+        throw new Error('Network response was not ok');
+      }
+  
       const signInResponse = await signInResponseTrigger.json();
       
-      if (signInResponse['status'] === 'Failed') {
-        setError(signInResponse['error']);
-        throw new Error(signInResponse['error']);
+      if (signInResponse.status === 'Failed') {
+        setError(signInResponse.error);
+        return;
       }
-
+  
       // Store the JWT token in localStorage
       localStorage.setItem('token', signInResponse.token);
       
       // Store user info
-      const users = JSON.parse(localStorage.getItem('users'));
-      users['id'] = signInResponse['id'];
-      users['email'] = signInResponse['email'];
-      localStorage.setItem('users', JSON.stringify(users));
+      const userData = {
+        id: signInResponse.id,
+        email: signInResponse.email
+      };
+      localStorage.setItem('users', JSON.stringify(userData));
       
       setError('');
       setSuccess('Login successful! Redirecting...');
@@ -67,10 +84,11 @@ const LoginPage = () => {
         navigate('/dashboard');
       }, 500);
     } catch (error) {
-      console.log(error);
+      setError('An error occurred during login. Please try again.');
+      console.error('Login error:', error);
     }
   };
-
+  
   const handleSignup = async (e) => {
     e.preventDefault();
     if (signupData.password !== signupData.confirmPassword) {
@@ -87,23 +105,32 @@ const LoginPage = () => {
       const signUpResponseTrigger = await fetch('http://localhost:5002/api/auth/register', {
         method: 'POST',
         body: formData,
+        headers: {
+          // Remove Content-Type header when using FormData
+          'Accept': 'application/json',
+        },
       });
       
-      const signUpResponse = await signUpResponseTrigger.json();
-
-      if (signUpResponse['status'] === 'Failed') {
-        setError(signUpResponse['error']);
-        throw new Error(signUpResponse['error']);
+      if (!signUpResponseTrigger.ok) {
+        throw new Error('Network response was not ok');
       }
-
+  
+      const signUpResponse = await signUpResponseTrigger.json();
+  
+      if (signUpResponse.status === 'Failed') {
+        setError(signUpResponse.error);
+        return;
+      }
+  
       // Store the JWT token in localStorage
       localStorage.setItem('token', signUpResponse.token);
       
       // Store user info
-      const users = JSON.parse(localStorage.getItem('users'));
-      users['id'] = signUpResponse['id'];
-      users['email'] = signUpResponse['email'];
-      localStorage.setItem('users', JSON.stringify(users));
+      const userData = {
+        id: signUpResponse.id,
+        email: signUpResponse.email
+      };
+      localStorage.setItem('users', JSON.stringify(userData));
       
       setError('');
       setSuccess('Account created successfully!');
@@ -112,9 +139,11 @@ const LoginPage = () => {
         navigate('/dashboard');
       }, 500);
     } catch (error) {
-      console.log(error);
+      setError('An error occurred during registration. Please try again.');
+      console.error('Registration error:', error);
     }
   };
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-neutral-900">
