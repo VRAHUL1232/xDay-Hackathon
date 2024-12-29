@@ -24,7 +24,7 @@ const Support = () => {
                 <h2 className="text-xl font-medium text-gray-800 mb-4">Contact Support</h2>
                 <p className="text-gray-600 mb-4">Need help? Our support team is available 24/7.</p>
                 <button
-                  className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700"
+                  className="px-4 py-2 bg-sky-600 text-white rounded-md hover:bg-sky-700"
                   onClick={() => alert('Contact support functionality')}
                 >
                   Get in Touch
@@ -35,7 +35,7 @@ const Support = () => {
                 <h2 className="text-xl font-medium text-gray-800 mb-4">FAQs</h2>
                 <p className="text-gray-600 mb-4">Find answers to commonly asked questions.</p>
                 <button
-                  className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700"
+                  className="px-4 py-2 bg-sky-600 text-white rounded-md hover:bg-sky-700"
                   onClick={() => setShowHelpCenter(true)}
                 >
                   View FAQs

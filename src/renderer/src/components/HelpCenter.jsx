@@ -54,7 +54,7 @@ const HelpCenter = ({ onBack }) => {
         >
           <button
             onClick={onBack}
-            className="ml-auto flex items-center space-x-2 bg-purple-700 text-white px-3 py-2 rounded-md hover:bg-purple-800 shadow-md"
+            className="ml-auto flex items-center space-x-2 bg-sky-700 text-white px-3 py-2 rounded-md hover:bg-sky-800 shadow-md"
           >
             <span className="text-lg font-bold">&larr;</span>
             <span>Back</span>
@@ -63,29 +63,29 @@ const HelpCenter = ({ onBack }) => {
 
         <div className="container mx-auto p-4 pt-16 relative">
           <header className="text-center bg-white p-8 rounded-md shadow-md mb-8">
-            <h1 className="text-3xl font-bold text-purple-700">HADAP AV Scanner Help Center</h1>
+            <h1 className="text-3xl font-bold text-sky-700">HADAP AV Scanner Help Center</h1>
             <p className="text-gray-600 mt-2">
               Learn how to use our multi-engine antivirus scanning solution
             </p>
           </header>
 
           <section className="bg-white p-6 rounded-md shadow-md mb-8">
-            <h2 className="text-2xl font-semibold text-purple-700 mb-4">How It Works</h2>
+            <h2 className="text-2xl font-semibold text-sky-700 mb-4">How It Works</h2>
             <div className="grid gap-6 md:grid-cols-3">
               <div className="bg-gray-100 p-4 rounded-md">
-                <h3 className="text-purple-600 font-bold mb-2">Step 1: File Placement</h3>
+                <h3 className="text-sky-600 font-bold mb-2">Step 1: File Placement</h3>
                 <p className="text-gray-700">
                   Place your files in the designated target folder for scanning.
                 </p>
               </div>
               <div className="bg-gray-100 p-4 rounded-md">
-                <h3 className="text-purple-600 font-bold mb-2">Step 2: Scanning</h3>
+                <h3 className="text-sky-600 font-bold mb-2">Step 2: Scanning</h3>
                 <p className="text-gray-700">
                   Multiple antivirus engines scan the files simultaneously in offline mode.
                 </p>
               </div>
               <div className="bg-gray-100 p-4 rounded-md">
-                <h3 className="text-purple-600 font-bold mb-2">Step 3: Results</h3>
+                <h3 className="text-sky-600 font-bold mb-2">Step 3: Results</h3>
                 <p className="text-gray-700">
                   Infected files are automatically moved to the quarantine folder, while clean files
                   remain in the target folder.
@@ -95,7 +95,7 @@ const HelpCenter = ({ onBack }) => {
           </section>
 
           <section className="bg-white p-6 rounded-md shadow-md">
-            <h2 className="text-2xl font-semibold text-purple-700 mb-6 text-center">
+            <h2 className="text-2xl font-semibold text-sky-700 mb-6 text-center">
               Frequently Asked Questions
             </h2>
             <div className="space-y-4">
@@ -112,9 +112,9 @@ const HelpCenter = ({ onBack }) => {
                   >
                     <h3 className="text-gray-700 font-medium">{faq.question}</h3>
                     {activeFaq === index ? (
-                      <FaChevronUp className="text-purple-700" />
+                      <FaChevronUp className="text-sky-700" />
                     ) : (
-                      <FaChevronDown className="text-purple-700" />
+                      <FaChevronDown className="text-sky-700" />
                     )}
                   </div>
                   <div

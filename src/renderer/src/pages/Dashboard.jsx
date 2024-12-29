@@ -49,11 +49,11 @@ const Dashboard = () => {
       <div className="bg-white shadow-lg rounded-lg p-6">
         <div className="rounded-lg md:flex-row justify-between items-start md:items-center">
           <div className="flex justify-between md:mt-0">
-            <h1 className="text-3xl font-semibold text-purple-800">Dashboard</h1>
+            <h1 className="text-3xl font-semibold text-sky-500">Dashboard</h1>
             <button
               key={'full'}
               onClick={() => handleDownload('full')}
-              className="px-4 py-2 bg-purple-700 hover:bg-purple-900 text-white rounded-lg md:px-2 font-sm"
+              className="px-4 py-2 bg-sky-500 hover:bg-sky-500 text-white rounded-lg md:px-2 font-sm"
             >
               Download Full Report
             </button>
@@ -65,8 +65,8 @@ const Dashboard = () => {
                   key={tab}
                   className={`text-xl px-8 py-2 font-medium transition-all border-b-2 ${
                     activeTab === tab
-                      ? 'text-purple-900 border-purple-900'
-                      : 'text-purple-900 border-transparent hover:text-purple-900'
+                      ? 'text-sky-500 border-sky-500'
+                      : 'text-sky-500 border-transparent hover:text-sky-500'
                   }`}
                   onClick={() => {
                     setActiveTab(tab)

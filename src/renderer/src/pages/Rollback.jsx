@@ -29,26 +29,26 @@ const Rollback = () => {
                 <HADAP onBack={handleBack} />
             ) : 
           <>
-            <h1 className="text-3xl font-semibold text-purple-800 mb-6">VM Backups & Restore</h1>
+            <h1 className="text-3xl font-semibold text-sky-800 mb-6">VM Backups & Restore</h1>
             <div className="border-b-2"/>
             <div className="grid md:grid-cols-3 gap-2 mt-4">
                 <div className="flex flex-col items-center">
                     <FaFolder
-                        className="w-20 h-20 text-purple-600 rounded-md hover:text-purple-800 cursor-pointer"
+                        className="w-20 h-20 text-sky-600 rounded-md hover:text-sky-800 cursor-pointer"
                         onClick={() => setShowVM1(true)}
                     />
                     <span className='text-gray-600 text-medium font-semibold'>Windows Defender</span>
                 </div>
                 <div className="flex flex-col items-center">
                     <FaFolder
-                        className="w-20 h-20 text-purple-600 rounded-md hover:text-purple-800 cursor-pointer"
+                        className="w-20 h-20 text-sky-600 rounded-md hover:text-sky-800 cursor-pointer"
                         onClick={() => setShowVM2(true)}
                     />
                     <span className='text-gray-600 text-medium font-semibold'>ESET</span>
                 </div>
                 <div className="flex flex-col items-center">
                     <FaFolder
-                        className="w-20 h-20 text-purple-600 rounded-md hover:text-purple-800 cursor-pointer"
+                        className="w-20 h-20 text-sky-600 rounded-md hover:text-sky-800 cursor-pointer"
                         onClick={() => setShowVM3(true)}
                     />
                     <span className='text-gray-600 text-medium font-semibold'>HADAP</span>

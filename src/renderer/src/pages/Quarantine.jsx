@@ -258,20 +258,20 @@ const Quarantine = () => {
   return (
     <div className="p-6 min-h-screen">
       <div className="bg-white shadow-lg rounded-lg p-6">
-        <h1 className="text-3xl font-semibold text-purple-800 mb-6">Quarantine Folder Information</h1>
+        <h1 className="text-3xl font-semibold text-sky-800 mb-6">Quarantine Folder Information</h1>
 
         {/* Tabs Section */}
         <div className="mb-6">
           <div className="flex space-x-8 border-b-2">
             <button
               onClick={() => setActiveTab('overview')}
-              className={`py-2 text-lg font-semibold ${activeTab === 'overview' ? 'text-purple-600 border-b-2 border-purple-600' : 'text-gray-500 hover:text-purple-700'}`}
+              className={`py-2 text-lg font-semibold ${activeTab === 'overview' ? 'text-sky-600 border-b-2 border-sky-600' : 'text-gray-500 hover:text-sky-700'}`}
             >
               Overview
             </button>
             <button
               onClick={() => setActiveTab('logs')}
-              className={`py-2 text-lg font-semibold ${activeTab === 'logs' ? 'text-purple-700 border-b-2 border-purple-700' : 'text-gray-500 hover:text-purple-700'}`}
+              className={`py-2 text-lg font-semibold ${activeTab === 'logs' ? 'text-sky-700 border-b-2 border-sky-700' : 'text-gray-500 hover:text-sky-700'}`}
             >
               Logs
             </button>
@@ -286,7 +286,7 @@ const Quarantine = () => {
                 id="timeLine"
                 value={timeLine}
                 onChange={handleTimelineChange}
-                className="block w-44 md:w-56 border border-gray-300 rounded-lg shadow-sm focus:ring-purple-500 focus:border-purple-500 text-sm px-3 py-2 bg-white"
+                className="block w-44 md:w-56 border border-gray-300 rounded-lg shadow-sm focus:ring-sky-500 focus:border-sky-500 text-sm px-3 py-2 bg-white"
               >
                 <option value="">Today</option>
                 <option value="Week">Week</option>
@@ -298,10 +298,10 @@ const Quarantine = () => {
             {/* Cards Section */}
             <div className="mt-3 grid grid-cols-1 md:grid-cols-4 gap-4">
               {/* Total Threat Files Card */}
-              <div className="bg-purple-100 rounded-lg p-4 relative transition-all hover:shadow-md">
+              <div className="bg-sky-100 rounded-lg p-4 relative transition-all hover:shadow-md">
                 <div className="flex items-center space-x-2">
-                  <BiError className="text-purple-800 w-6 h-6"/>
-                  <h6 className="text-purple-800 font-semibold text-lg">Total Threat Files</h6>
+                  <BiError className="text-sky-800 w-6 h-6"/>
+                  <h6 className="text-sky-800 font-semibold text-lg">Total Threat Files</h6>
                 </div>
                 <div className="flex items-end space-x-2 mt-3">
                   <h3 className="text-red-500 text-4xl font-bold">{totalThreatFiles}</h3>
@@ -315,10 +315,10 @@ const Quarantine = () => {
               </div>
 
               {/* Isolation Percentage Card */}
-              <div className="bg-purple-100 rounded-lg p-4 relative transition-all hover:shadow-md">
+              <div className="bg-sky-100 rounded-lg p-4 relative transition-all hover:shadow-md">
                 <div className="flex items-center space-x-2">
-                  <BiShield className="text-purple-800 w-6 h-6"/>
-                  <h6 className="text-purple-800 font-semibold text-lg">Isolation Percentage</h6>
+                  <BiShield className="text-sky-800 w-6 h-6"/>
+                  <h6 className="text-sky-800 font-semibold text-lg">Isolation Percentage</h6>
                 </div>
                 <div className="flex items-end space-x-2 mt-3">
                   <h3 className="text-yellow-500 text-3xl font-bold">{`${isolationPercentage}%`}</h3>
@@ -332,10 +332,10 @@ const Quarantine = () => {
               </div>
 
               {/* Last Cleaned Card */}
-              <div className="bg-purple-100 rounded-lg p-4 relative transition-all hover:shadow-md">
+              <div className="bg-sky-100 rounded-lg p-4 relative transition-all hover:shadow-md">
                 <div className="flex items-center space-x-2">
-                  <BiHistory className="text-purple-800 w-6 h-6"/>
-                  <h6 className="text-purple-800 font-semibold text-lg">Last Cleaned</h6>
+                  <BiHistory className="text-sky-800 w-6 h-6"/>
+                  <h6 className="text-sky-800 font-semibold text-lg">Last Cleaned</h6>
                 </div>
                 <div className="mt-3">
                   <h3 className="text-blue-500 text-2xl font-bold">{lastCleaned}</h3>
@@ -344,10 +344,10 @@ const Quarantine = () => {
               </div>
 
               {/* System Rollback Status Card */}
-              <div className="bg-purple-100 rounded-lg p-4 relative transition-all hover:shadow-md">
+              <div className="bg-sky-100 rounded-lg p-4 relative transition-all hover:shadow-md">
                 <div className="flex items-center space-x-2">
-                  <BiTransfer className="text-purple-800 w-6 h-6" />
-                  <h6 className="text-purple-800 font-semibold text-lg">System Rollback Status</h6>
+                  <BiTransfer className="text-sky-800 w-6 h-6" />
+                  <h6 className="text-sky-800 font-semibold text-lg">System Rollback Status</h6>
                 </div>
                 <div className="mt-3">
                   <h3 className="text-green-500 text-2xl font-bold">{systemRollbackStatus}</h3>
@@ -363,8 +363,8 @@ const Quarantine = () => {
 
             <div className="flex space-x-4 mt-3">
               {/* Storage Analysis Chart */}
-              <div className="bg-purple-100 rounded-lg p-4 flex-1 transition-all hover:shadow-md">
-                <h6 className="text-purple-800 font-semibold text-xl">Storage Analysis</h6>
+              <div className="bg-sky-100 rounded-lg p-4 flex-1 transition-all hover:shadow-md">
+                <h6 className="text-sky-800 font-semibold text-xl">Storage Analysis</h6>
                 <div className="flex items-center justify-between">
                   <p className="text-gray-500 font-medium text-sm">Memory utilised by Files</p>
                   <div className="text-gray-600 text-lg font-bold">Overall Storage: {totalMemoryUsed} MB</div>
@@ -373,8 +373,8 @@ const Quarantine = () => {
               </div>
 
               {/* Threat Level chart */}
-              <div className="bg-purple-100 rounded-lg p-4 flex-1 transition-all hover:shadow-md">
-                <h6 className="text-purple-800 font-semibold text-xl">Threat Level Analysis</h6>
+              <div className="bg-sky-100 rounded-lg p-4 flex-1 transition-all hover:shadow-md">
+                <h6 className="text-sky-800 font-semibold text-xl">Threat Level Analysis</h6>
                 <div className="flex items-center justify-between">
                   <p className="text-gray-500 font-medium text-sm">Threat level of quarantined files</p>
                   <div className="text-gray-600 text-lg font-bold">Overall Threat: Critical</div>
@@ -385,24 +385,24 @@ const Quarantine = () => {
 
             <div className="flex space-x-4 mt-3">
               {/* Top Threat Files Section */}
-              <div className="bg-purple-100 rounded-lg p-4 w-[35%] transition-all hover:shadow-md">
-                <h6 className="text-purple-800 font-semibold text-xl">Top Threat Files</h6>
+              <div className="bg-sky-100 rounded-lg p-4 w-[35%] transition-all hover:shadow-md">
+                <h6 className="text-sky-800 font-semibold text-xl">Top Threat Files</h6>
                 <p className="text-gray-500 font-medium text-sm">Top 3 level of quarantined files based on threat level</p>
                 <div className="flex mt-5 border-b-2 border-gray-300 space-x-3">
                   <button
-                    className={`px-2 py-1 ${threatTab === 'critical' ? 'bg-purple-500 text-white rounded-md font-bold' : 'bg-purple-100'}`}
+                    className={`px-2 py-1 ${threatTab === 'critical' ? 'bg-sky-500 text-white rounded-md font-bold' : 'bg-sky-100'}`}
                     onClick={() => setThreatTab('critical')}
                   >
                     Critical
                   </button>
                   <button
-                    className={`px-2 py-1 ${threatTab === 'suspicious' ? 'bg-purple-500 text-white rounded-md font-bold' : 'bg-purple-100'}`}
+                    className={`px-2 py-1 ${threatTab === 'suspicious' ? 'bg-sky-500 text-white rounded-md font-bold' : 'bg-sky-100'}`}
                     onClick={() => setThreatTab('suspicious')}
                   >
                     Suspicious
                   </button>
                   <button
-                    className={`px-2 py-1 ${threatTab === 'stable' ? 'bg-purple-500 text-white rounded-md font-bold' : 'bg-purple-100'}`}
+                    className={`px-2 py-1 ${threatTab === 'stable' ? 'bg-sky-500 text-white rounded-md font-bold' : 'bg-sky-100'}`}
                     onClick={() => setThreatTab('stable')}
                   >
                     Stable
@@ -421,13 +421,13 @@ const Quarantine = () => {
               </div>
 
           {/* Resource Monitor Chart */}
-          <div className="bg-purple-100 rounded-lg p-4 w-[65%] transition-all hover:shadow-md">
-            <h6 className="text-purple-800 font-semibold text-xl">Resource Monitor</h6>
+          <div className="bg-sky-100 rounded-lg p-4 w-[65%] transition-all hover:shadow-md">
+            <h6 className="text-sky-800 font-semibold text-xl">Resource Monitor</h6>
             <p className="text-gray-500 font-medium text-sm">Resource usage of the VM</p>
             <div className="flex space-x-4 border-b-2 border-gray-300 mt-4">
               <button
                 className={`px-2 py-1 ${
-                  resourceTab === "Overall" ? "bg-purple-500 text-white rounded-md font-bold" : "bg-purple-100"
+                  resourceTab === "Overall" ? "bg-sky-500 text-white rounded-md font-bold" : "bg-sky-100"
                 }`}
                 onClick={() => setResourceTab("Overall")}
               >
@@ -435,7 +435,7 @@ const Quarantine = () => {
               </button>
               <button
                 className={`px-2 py-1 ${
-                  resourceTab === "cpu" ? "bg-purple-500 text-white rounded-md font-bold" : "bg-purple-100"
+                  resourceTab === "cpu" ? "bg-sky-500 text-white rounded-md font-bold" : "bg-sky-100"
                 }`}
                 onClick={() => setResourceTab("cpu")}
               >
@@ -443,7 +443,7 @@ const Quarantine = () => {
               </button>
               <button
                 className={`px-2 py-1 ${
-                  resourceTab === "memory" ? "bg-purple-500 text-white rounded-md font-bold" : "bg-purple-100"
+                  resourceTab === "memory" ? "bg-sky-500 text-white rounded-md font-bold" : "bg-sky-100"
                 }`}
                 onClick={() => setResourceTab("memory")}
               >
@@ -451,7 +451,7 @@ const Quarantine = () => {
               </button>
               <button
                 className={`px-2 py-1 ${
-                  resourceTab === "disk" ? "bg-purple-500 text-white rounded-md font-bold" : "bg-purple-100"
+                  resourceTab === "disk" ? "bg-sky-500 text-white rounded-md font-bold" : "bg-sky-100"
                 }`}
                 onClick={() => setResourceTab("disk")}
               >
@@ -541,12 +541,12 @@ const Quarantine = () => {
               <div className="flex flex-wrap gap-6">
                 {/* File Type Filter */}
                 <div className="flex flex-col space-y-2">
-                  <label htmlFor="fileType" className="text-md font-semibold text-purple-800">
+                  <label htmlFor="fileType" className="text-md font-semibold text-sky-800">
                     File Type
                   </label>
                   <select
                     id="fileType"
-                    className="block w-44 md:w-56 border border-gray-300 rounded-lg shadow-sm focus:ring-purple-500 focus:border-purple-500 text-sm px-3 py-2 bg-white"
+                    className="block w-44 md:w-56 border border-gray-300 rounded-lg shadow-sm focus:ring-sky-500 focus:border-sky-500 text-sm px-3 py-2 bg-white"
                   >
                     <option value="">All</option>
                     <option value="pdf">PDF</option>
@@ -558,12 +558,12 @@ const Quarantine = () => {
 
                 {/* Threat Level Filter */}
                 <div className="flex flex-col space-y-2">
-                  <label htmlFor="threatLevel" className="text-md font-semibold text-purple-800">
+                  <label htmlFor="threatLevel" className="text-md font-semibold text-sky-800">
                     Threat Level
                   </label>
                   <select
                     id="threatLevel"
-                    className="block w-44 md:w-56 border border-gray-300 rounded-lg shadow-sm focus:ring-purple-500 focus:border-purple-500 text-sm px-3 py-2 bg-white"
+                    className="block w-44 md:w-56 border border-gray-300 rounded-lg shadow-sm focus:ring-sky-500 focus:border-sky-500 text-sm px-3 py-2 bg-white"
                   >
                     <option value="">All</option>
                     <option value="low">Low</option>
@@ -575,12 +575,12 @@ const Quarantine = () => {
 
                 {/* Date Range Filter */}
                 <div className="flex flex-col space-y-2">
-                  <label htmlFor="dateRange" className="text-md font-semibold text-purple-800">
+                  <label htmlFor="dateRange" className="text-md font-semibold text-sky-800">
                     Date Range
                   </label>
                   <select
                     id="dateRange"
-                    className="block w-44 md:w-56 border border-gray-300 rounded-lg shadow-sm focus:ring-purple-500 focus:border-purple-500 text-sm px-3 py-2 bg-white"
+                    className="block w-44 md:w-56 border border-gray-300 rounded-lg shadow-sm focus:ring-sky-500 focus:border-sky-500 text-sm px-3 py-2 bg-white"
                   >
                     <option value="">All</option>
                     <option value="today">Today</option>
@@ -599,7 +599,7 @@ const Quarantine = () => {
                   // Add your logic for downloading a report here
                   console.log('Download Report');
                 }}
-                className="px-6 py-2 bg-purple-600 text-white font-medium rounded-lg shadow hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 text-sm transition duration-150 ease-in-out"
+                className="px-6 py-2 bg-sky-600 text-white font-medium rounded-lg shadow hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 text-sm transition duration-150 ease-in-out"
               >
                 Download Report
               </button>

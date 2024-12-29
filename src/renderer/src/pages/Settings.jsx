@@ -92,7 +92,7 @@ const Settings = () => {
             style={{ display: 'none' }}
           />
           <button
-            className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 mt-4"
+            className="px-4 py-2 bg-sky-600 text-white rounded-md hover:bg-sky-700 mt-4"
             onClick={enableSelectButton}
           >
             Edit Folder
@@ -102,7 +102,7 @@ const Settings = () => {
         <div className="p-4 border rounded-lg">
           <h3 className="text-lg font-medium text-gray-800 mb-2">Profile Settings</h3>
           <p className="text-gray-600 mb-4">Manage your account information and preferences.</p>
-          <button className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700">
+          <button className="px-4 py-2 bg-sky-600 text-white rounded-md hover:bg-sky-700">
             Edit Profile
           </button>
         </div>
@@ -110,7 +110,7 @@ const Settings = () => {
         <div className="p-4 border rounded-lg">
           <h3 className="text-lg font-medium text-gray-800 mb-2">Notification Settings</h3>
           <p className="text-gray-600 mb-4">Configure your notification preferences.</p>
-          <button className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700">
+          <button className="px-4 py-2 bg-sky-600 text-white rounded-md hover:bg-sky-700">
             Manage Notifications
           </button>
         </div>
@@ -118,7 +118,7 @@ const Settings = () => {
         <div className="p-4 border rounded-lg">
           <h3 className="text-lg font-medium text-gray-800 mb-2">Security Settings</h3>
           <p className="text-gray-600 mb-4">Update your security preferences and password.</p>
-          <button className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700">
+          <button className="px-4 py-2 bg-sky-600 text-white rounded-md hover:bg-sky-700">
             Security Options
           </button>
         </div>
