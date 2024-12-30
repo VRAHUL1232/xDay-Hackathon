@@ -8,9 +8,9 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   activeTab: 'FILE',
   selectedFile: null,
-  selectedFolder: null,
-  folderName: null,
+  selectedUrl: null,
   isLoading: false,
+  temp:0,
 };
 
 const homeSlice = createSlice({
@@ -20,24 +20,24 @@ const homeSlice = createSlice({
     setActiveTab(state, action) {
       state.activeTab = action.payload;
       state.selectedFile = null;
-      state.selectedFolder = null;
-      state.folderName = null;
+      state.selectedUrl = null;
     },
     setSelectedFile(state, action) {
       state.selectedFile = action.payload;
     },
-    setSelectedFolder(state, action) {
-      state.selectedFolder = action.payload.files;
-      state.folderName = action.payload.folderName;
+    setSelectedUrl(state, action) {
+      state.selectedUrl = action.payload;
     },
     setIsLoading(state, action) {
       state.isLoading = action.payload;
     },
+    setTemp(state,action){
+      state.temp = state.temp+1
+    },
     resetState(state) {
       state.activeTab = 'FILE';
       state.selectedFile = null;
-      state.selectedFolder = null;
-      state.folderName = null;
+      state.selectedUrl = null;
       state.isLoading = false;
     },
   },
@@ -46,8 +46,9 @@ const homeSlice = createSlice({
 export const {
   setActiveTab,
   setSelectedFile,
-  setSelectedFolder,
+  setSelectedUrl,
   setIsLoading,
+  setTemp,
   resetState
 } = homeSlice.actions;
 

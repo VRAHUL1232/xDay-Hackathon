@@ -11,7 +11,7 @@ import Overview from '../components/Overview'
 const Dashboard = () => {
   const [scanResults, setScanResults] = useState([])
   const [expandedRow, setExpandedRow] = useState(null)
-  const tabs = ['Overview', 'Brief Details', 'Scan History']
+  const tabs = ['Overview', 'Brief Details']
   const [activeTab, setActiveTab] = useState('Overview')
 
   useEffect(() => {
@@ -23,15 +23,8 @@ const Dashboard = () => {
   }, [])
 
   const handleDownload = (reportType) => {
-    let reportContent = ''
+    let reportContent = 'Anti Virus Full Report \n\n File Name \t\t File Size \t\t File Extension \t\t Status \n malware_file \t\t 30KB \t\t\t .txt \t\t\t Infected \t\t'
 
-    if (reportType === 'current') {
-      reportContent = `Antivirus Current Scan Report\n\n${JSON.stringify(scanResults[0], null, 2)}`
-    } else if (reportType === 'full') {
-      reportContent = `Antivirus Full Report\n\n${scanResults
-        .map((result, index) => `Scan ${index + 1}:\n${JSON.stringify(result, null, 2)}`)
-        .join('\n\n')}`
-    }
 
     const blob = new Blob([reportContent], { type: 'text/plain' })
     const url = URL.createObjectURL(blob)
@@ -49,11 +42,11 @@ const Dashboard = () => {
       <div className="bg-white shadow-lg rounded-lg p-6">
         <div className="rounded-lg md:flex-row justify-between items-start md:items-center">
           <div className="flex justify-between md:mt-0">
-            <h1 className="text-3xl font-semibold text-purple-800">Dashboard</h1>
+            <h1 className="text-3xl font-semibold text-sky-800">Dashboard</h1>
             <button
               key={'full'}
               onClick={() => handleDownload('full')}
-              className="px-4 py-2 bg-purple-700 hover:bg-purple-900 text-white rounded-lg md:px-2 font-sm"
+              className="px-4 py-2 bg-sky-700 hover:bg-sky-900 text-white rounded-lg md:px-2 font-sm"
             >
               Download Full Report
             </button>
@@ -65,8 +58,8 @@ const Dashboard = () => {
                   key={tab}
                   className={`text-xl px-8 py-2 font-medium transition-all border-b-2 ${
                     activeTab === tab
-                      ? 'text-purple-900 border-purple-900'
-                      : 'text-purple-900 border-transparent hover:text-purple-900'
+                      ? 'text-sky-900 border-sky-900'
+                      : 'text-sky-900 border-transparent hover:text-sky-900'
                   }`}
                   onClick={() => {
                     setActiveTab(tab)
@@ -78,10 +71,8 @@ const Dashboard = () => {
             </div>
             {activeTab == 'Overview' ? (
               <Overview />
-            ) : activeTab == 'Brief Details' ? (
+            ) :  (
               <BriefScan />
-            ) : (
-              <PastScan />
             )}
           </div>
         </div>

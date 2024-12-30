@@ -4,8 +4,12 @@
 /* eslint-disable no-unused-vars */
 import { ChevronDown, ChevronUp } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 
 function BriefScan() {
+  const { activeTab, selectedFile, selectedUrl, isLoading, temp } = useSelector(
+    (state) => state.home
+  )
   const ScanDetails = ({ scanData }) => (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 p-5 bg-gray-100">
       <div className="bg-white rounded-lg p-5 shadow">
@@ -22,11 +26,9 @@ function BriefScan() {
             {scanData.details.map((avData, index) => {
               // Change the logic here to check for 0 (clean) and 1 (infected)
               const statusClass =
-                avData.infected === 0
-                  ? 'bg-green-100 text-green-800'
-                  : 'bg-red-100 text-red-800'
+                avData.infected === 0 ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
               const statusText = avData.infected === 0 ? 'Clean' : 'Infected'
-  
+
               return (
                 <tr key={index} className="border-b">
                   <td className="p-2">{avData.vm}</td>
@@ -58,18 +60,19 @@ function BriefScan() {
       </div>
     </div>
   )
-  
+
   const ScanRow = ({ scan, onClick, showDetails }) => {
     // Determine the status based on the scan details
     const status = scan.details.some((avData) => avData.infected === 1) ? 'Infected' : 'Clean'
-    const statusClass = status === 'Clean' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
-  
+    const statusClass =
+      status === 'Clean' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+
     // Convert file size from bytes to KB and format to 2 decimal places
     const fileSizeKB = (scan.file_size / 1024).toFixed(2)
-  
+
     // Determine the chevron direction based on showDetails state
-    const ChevronIcon = showDetails ? ChevronUp : ChevronDown;
-  
+    const ChevronIcon = showDetails ? ChevronUp : ChevronDown
+
     return (
       <>
         <tr className="hover:bg-gray-50 transition-colors">
@@ -98,35 +101,11 @@ function BriefScan() {
       </>
     )
   }
-  
 
-  const [scanResults, setScanResults] = useState([])
-  const [expandedRow, setExpandedRow] = useState(null)
+  const [scanResults, setScanResults] = useState(null)
+  const [expandedRow, setExpandedRow] = useState(false)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
-
-  // Fetch scan results data from the backend
-  useEffect(() => {
-    const fetchScanResults = async () => {
-      try {
-        setLoading(true)
-        const response = await fetch('http://localhost:5000/api/grouped_scans') // Flask backend API URL
-        if (!response.ok) {
-          throw new Error('Failed to fetch scan results')
-        }
-        const data = await response.json()
-        console.log('Data fetched:', data)
-        setScanResults(data)
-      } catch (err) {
-        console.error('Error fetching data:', err)
-        setError('Failed to load scan results')
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    fetchScanResults()
-  }, [])
 
   const handleDownload = (reportType) => {
     let reportContent = ''
@@ -152,15 +131,6 @@ function BriefScan() {
 
   console.log('scanResults:', scanResults)
 
-  // Handle loading and error states
-  if (loading) {
-    return <div>Loading scan results...</div>
-  }
-
-  if (error) {
-    return <div>Error: {error}</div>
-  }
-
   return (
     <section>
       <div className="bg-white rounded-lg shadow overflow-hidden">
@@ -172,25 +142,29 @@ function BriefScan() {
                 <th className="p-4 text-left font-semibold text-gray-600">File Name</th>
                 <th className="p-4 text-left font-semibold text-gray-600">File Extension</th>
                 <th className="p-4 text-left font-semibold text-gray-600">File Size</th>
-                <th className="p-4 text-left font-semibold text-gray-600">Status</th> {/* New column */}
-                <th className="p-4 text-left font-semibold text-gray-600">Actions</th>
+                <th className="p-4 text-left font-semibold text-gray-600">Status</th>{' '}
               </tr>
             </thead>
             <tbody>
-              {scanResults && scanResults.length > 0 ? (
-                scanResults.map((scan, index) => (
-                  <ScanRow
-                    key={index}
-                    scan={scan}
-                    onClick={() => setExpandedRow(expandedRow === index ? null : index)}
-                    showDetails={expandedRow === index}
-                  />
-                ))
-              ) : (
-                <tr>
-                  <td colSpan="5" className="text-center p-5">No scan results available</td>
-                </tr>
-              )}
+              <tr className="">
+                <td className="p-4 text-left font-semibold text-gray-600">Malware Files</td>
+                <td className="p-4 text-left font-semibold text-gray-600">.txt</td>
+                <td className="p-4 text-left font-semibold text-gray-600">30 KB</td>
+                <td className="p-4 text-red-600 text-left font-semibold text-gray-600">
+                  Infected
+                </td>{' '}
+                {/* New column */}
+              </tr>
+              {temp > 1 ? (
+                <>
+                  <td className="p-4 text-left font-semibold text-gray-600">https://www.eicar.org/</td>
+                  <td className="p-4 text-left font-semibold text-gray-600">url</td>
+                  <td className="p-4 text-left font-semibold text-gray-600">none</td>
+                  <td className="p-4 text-red-600 text-left font-semibold text-gray-600">
+                    Malicious
+                  </td>{' '}
+                </>
+              ) : null}
             </tbody>
           </table>
         </div>

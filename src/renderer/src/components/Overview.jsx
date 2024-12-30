@@ -29,8 +29,8 @@ const EChartsDrilldownBarChart = ({ data }) => {
 
     // Root level data
     const rootData = [
-      { name: 'Clean', value: data.cleanCount, itemStyle: { color: 'green' } },
-      { name: 'Infected', value: data.infectedCount, itemStyle: { color: 'red' } }
+      { name: 'Clean', value: 10, itemStyle: { color: 'green' } },
+      { name: 'Infected', value: 6, itemStyle: { color: 'red' } }
     ]
 
     // Second level data
@@ -139,8 +139,8 @@ const EChartsDrilldownBarChart = ({ data }) => {
 
     // Root level data
     const rootData = [
-      { name: 'Clean', value: data.cleanCount, itemStyle: { color: 'green' } },
-      { name: 'Infected', value: data.infectedCount, itemStyle: { color: 'red' } }
+      { name: 'Clean', value: 10, itemStyle: { color: 'green' } },
+      { name: 'Infected', value: 6, itemStyle: { color: 'red' } }
     ]
 
     // Chart configuration for root level
@@ -270,12 +270,12 @@ const StackedLineChart = ({ data }) => {
         {
           name: 'VM1',
           type: 'line',
-          data: [data.vm1]
+          data: [1.0,1.2,2.0,2.2,3.0]
         },
         {
           name: 'VM2',
           type: 'line',
-          data: [data.vm2]
+          data: [1.2,1.3,3.1,3.4,4.0]
         }
       ]
     }
@@ -307,36 +307,36 @@ const RiskMetrics = ({ metrics }) => (
   <div className="bg-white rounded-lg shadow-md p-4">
     <div className="grid grid-cols-5 gap-4">
       <div className="text-center">
-        <div className="bg-purple-100 rounded-lg p-3 mb-2">
-          <FilesIcon className="w-5 h-5 text-purple-600 mx-auto" />
+        <div className="bg-sky-100 rounded-lg p-3 mb-2">
+          <FilesIcon className="w-5 h-5 text-sky-600 mx-auto" />
           <div className="text-lg font-bold">{metrics.totalFiles}</div>
           <div className="text-sm text-gray-500">Total Files</div>
         </div>
       </div>
       <div className="text-center">
-        <div className="bg-purple-100 rounded-lg p-3 mb-2">
-          <FaFilePdf className="w-5 h-5 text-purple-600 mx-auto" />
+        <div className="bg-sky-100 rounded-lg p-3 mb-2">
+          <FaFilePdf className="w-5 h-5 text-sky-600 mx-auto" />
           <div className="text-lg font-bold">{metrics.PDFfiles}</div>
           <div className="text-sm text-gray-500">PDF Files</div>
         </div>
       </div>
       <div className="text-center">
-        <div className="bg-purple-100 rounded-lg p-3 mb-2">
-          <FaFileImage className="w-5 h-5 text-purple-600 mx-auto" />
+        <div className="bg-sky-100 rounded-lg p-3 mb-2">
+          <FaFileImage className="w-5 h-5 text-sky-600 mx-auto" />
           <div className="text-lg font-bold">{metrics.Imagefiles}</div>
           <div className="text-sm text-gray-500">Image Files</div>
         </div>
       </div>
       <div className="text-center">
-        <div className="bg-purple-100 rounded-lg p-3 mb-2">
-          <FaFileAlt className="w-5 h-5 text-purple-600 mx-auto" />
+        <div className="bg-sky-100 rounded-lg p-3 mb-2">
+          <FaFileAlt className="w-5 h-5 text-sky-600 mx-auto" />
           <div className="text-lg font-bold">{metrics.Docfiles}</div>
           <div className="text-sm text-gray-500">Doc Files</div>
         </div>
       </div>
       <div className="text-center">
-        <div className="bg-purple-100 rounded-lg p-3 mb-2">
-          <FaFile className="w-5 h-5 text-purple-600 mx-auto" />
+        <div className="bg-sky-100 rounded-lg p-3 mb-2">
+          <FaFile className="w-5 h-5 text-sky-600 mx-auto" />
           <div className="text-lg font-bold">{metrics.Otherfiles}</div>
           <div className="text-sm text-gray-500">Other Files</div>
         </div>
@@ -347,11 +347,11 @@ const RiskMetrics = ({ metrics }) => (
 
 function Overview() {
   const [metrics, setMetrics] = useState({
-    totalFiles: 0,
-    PDFfiles: 0,
-    Imagefiles: 0,
-    Docfiles: 0,
-    Otherfiles: 0
+    totalFiles: 10,
+    PDFfiles: 2,
+    Imagefiles: 3,
+    Docfiles: 4,
+    Otherfiles: 1
   })
 
   const [barChartData, setBarChartData] = useState({

@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import logo from '../assets/hadap_logo.png'
+import logo from '../assets/malware_slayer.jpg'
 import avatar from '../assets/avatar.jpg'
 import { MdDashboard } from 'react-icons/md' // Dashboard overview icon
 import { MdScanner } from 'react-icons/md' // Dashboard icon
@@ -32,10 +32,7 @@ const Sidebar = () => {
     { path: '/dashboard', icon: MdDashboard, label: 'Dashboard' },
     { path: '/Scan', icon: MdScanner, label: 'Custom Scan' },
     { path: '/Quarantine', icon: BiFolderOpen, label: 'Quarantine' },
-    { path: '/Rollback', icon: BiHistory, label: 'Rollback' },
-    { path: '/Updates', icon: BiRefresh, label: 'Updates' },
     { path: '/support', icon: BiSupport, label: 'Support' },
-    { path: '/settings', icon: FiSettings, label: 'Settings' }
   ]
   const navigate = useNavigate()
 
@@ -62,8 +59,8 @@ const Sidebar = () => {
                 to={path}
                 className={`flex items-center mb-3 rounded py-2 px-2 transition-all duration-200 ${
                   location.pathname === path
-                    ? 'bg-purple-100 text-purple-600 shadow-sm'
-                    : 'hover:bg-purple-50 hover:text-purple-600'
+                    ? 'bg-sky-100 text-sky-600 shadow-sm'
+                    : 'hover:bg-sky-50 hover:text-sky-600'
                 }`}
               >
                 <Icon className="w-5 h-5 mr-2" />
@@ -76,13 +73,13 @@ const Sidebar = () => {
 
       <div className="sm:h-16 md:h-30 lg:h-48 xl:45"></div>
       {/* Profile Detail Card */}
-      <div className="bg-purple-100 text-purple-600 p-3 rounded-lg shadow-sm relative mb-6">
+      <div className="bg-sky-100 text-sky-600 p-3 rounded-lg shadow-sm relative mb-6">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <img src={avatar} alt="User Avatar" className="w-10 h-10 rounded-full mr-3" />
             <div className="flex-grow">
-              <p className="font-bold text-sm">John Doe</p>
-              <p className="text-xs text-purple-500">Admin</p>
+              <p className="font-bold text-sm"></p>
+              <p className="text-xs text-sky-500">Admin</p>
             </div>
           </div>
           {/* Icons Section */}

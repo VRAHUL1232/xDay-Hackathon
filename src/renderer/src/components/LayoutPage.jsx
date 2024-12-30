@@ -3,8 +3,6 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-unused-vars */
 
-
-import Navbar from "./Navbar"
 import Sidebar from "./Sidebar"
 
 function LayoutPage({ children }) {
